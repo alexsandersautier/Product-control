@@ -21,14 +21,14 @@
             <div class="into-reg">
                 <label for="">
                     Product
-                    <input type="text" name="" id="" placeholder="iphone">
+                    <input type="text" name="" id="item" placeholder="iphone">
                 </label>
                 <label for="">
                     Price
-                    <input type="text" name="" id="" placeholder="R$ 00.00">
+                    <input type="number" name="" id="ite_price" placeholder="R$ 00.00">
                 </label>
                 <div class="btns">
-                    <button class="btn" id="btn-insert">Insert</button>
+                    <button class="btn" id="btn-insert" onclick="product.insert()">Insert</button>
                     <button class="btn" id="btn-cancel">Cancel</button>
                 </div>
             </div>
@@ -44,13 +44,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td id="id">1</td>
+                    <td id="names">1</td>
+                    <td id="price">1</td>
                     <td>1</td>
                 </tbody>
             </table>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
