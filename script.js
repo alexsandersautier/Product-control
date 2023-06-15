@@ -10,6 +10,8 @@ class Product{
         if(this.validate(product) == true){
             this.save(product)
         }
+        this.do_list()
+        this.cancel()
     }
 
     read_date(){
@@ -43,6 +45,44 @@ class Product{
     save(product){
         this.products.push(product)
         this.id++
+    }
+    
+    do_list(){
+        let tbody = document.getElementById('tbody')
+        tbody.innerText = ''
+        
+        for(let i = 0; i < this.products.length; i++){
+            let tr = tbody.insertRow()
+            
+            let td_id = tr.insertCell()
+            let td_name = tr.insertCell()
+            let td_price = tr.insertCell()
+            let td_delete = tr.insertCell()
+
+            td_id.innerText = this.products[i].id
+            td_name.innerText = this.products[i].name
+            td_price.innerText = this.products[i].price
+            let image = document.createElement('img')
+            image.src = 'del.png'
+            image.setAttribute('onclick','product.delete('+this.products[i].id+')')
+            td_delete.appendChild(image)
+
+        }
+    }
+    cancel(){
+        document.getElementById('item').value = ''
+        document.getElementById('ite_price').value = ''
+    }
+
+    delete(id){
+       let tbody = document.getElementById('tbody')
+       for(let i = 0; i < this.products.length; i++){
+            if(this.products[i].id == id){
+                this.products.splice(i,1)
+                tbody.deleteRow(i)
+            }
+       }
+       alert('delete item sucess')
     }
 
 }
