@@ -82,7 +82,7 @@ class Product{
                 tbody.deleteRow(i)
             }
        }
-       alert('delete item sucess')
+       alert('item deleted sucess')
     }
 
 }
